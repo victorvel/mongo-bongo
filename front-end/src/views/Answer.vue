@@ -9,23 +9,30 @@
     </div>
     <div class="content">
       <div class="add">
-        <div class="form" v-for="item in items" :key="item.id">
-          <h2>{{item.title}}</h2>
-          <p>{{ item.question }}</p>
-          <p></p>
-          <textarea
-            v-model="response"
-            placeholder="Put Answer Here"
-            name="response"
-            id=""
-            cols="30"
-            rows="10"
-          ></textarea>
-          <input
-            v-model="background"
-            placeholder="Why are you qualified to answer this Question"
-          />
-          <button @click="upload">Post Answer</button>
+        <div class="suggestions" v-if="suggestions.length > 0">
+          <div
+            class="suggestion"
+            v-for="s in suggestions"
+            :key="s.id"
+            @click="selectItem(s)"
+          >
+            <h2>{{ item.title }}</h2>
+            <p>{{ item.question }}</p>
+            <p></p>
+            <textarea
+              v-model="response"
+              placeholder="Put Answer Here"
+              name="response"
+              id=""
+              cols="30"
+              rows="10"
+            ></textarea>
+            <input
+              v-model="background"
+              placeholder="Why are you qualified to answer this Question"
+            />
+            <button @click="upload">Post Answer</button>
+          </div>
         </div>
       </div>
       <div class="edit">
@@ -69,7 +76,6 @@
           <button @click="deleteItem(findItem)">Delete</button>
         </div>
       </div>
-      
     </div>
   </div>
 </template>
@@ -146,7 +152,7 @@ export default {
       response: "", //Answer Text
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
-      
+
       addItem: null,
       //array of items
       items: [],
