@@ -8,6 +8,7 @@
       </router-link>
       <div class="title">
         <h1>Q&A</h1>
+        <router-link to = "/" tag = button>Ask Questions</router-link>
          <router-link to="/Answer" tag = button>Answer Questions</router-link>
          <router-link to="/Display" tag = button>View Questions</router-link>
       </div>
@@ -39,7 +40,7 @@ body {
   margin: 0px;
 }
 
-/* Header /
+/* Header */
 .header {
   display: flex;
   padding: 10px 100px 0px 100px;
@@ -60,7 +61,7 @@ body {
   min-height: 500px;
 }
 
-/ Footer */
+/* Footer */
 #app {
   min-height: 90vh;
 }
