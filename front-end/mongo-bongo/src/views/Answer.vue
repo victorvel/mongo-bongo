@@ -29,7 +29,7 @@ body {
   margin: 0px;
 }
 
-/* Header /
+/* Header */
 .header {
   display: flex;
   padding: 10px 100px 0px 100px;
