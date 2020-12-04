@@ -122,22 +122,22 @@ export default {
   name: "Answer",
   data() {
     return {
-      title: " ", //Title of Question
-      question: " ", //Question Text
-      response: " ", //Answer Text
-      background: " ", //Answerer Experience Text
-      name: " ", //Name of Questioner
+      title: "", //Title of Question
+      question: "", //Question Text
+      response: "", //Answer Text
+      background: "", //Answerer Experience Text
+      name: "", //Name of Questioner
 
       addItem: null,
       //array of items
       items: [],
 
       //find definitions
-      findTitle: "",
-      findQuestion: "",
-      findResponse: "",
-      findBackground: "",
-      findName: "",
+      findTitle: " ",
+      findQuestion: " ",
+      findResponse: " ",
+      findBackground: " ",
+      findName: " ",
       findItem: null,
     };
   },
