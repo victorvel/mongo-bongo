@@ -180,20 +180,6 @@ export default {
         // console.log(error);
       }
     },
-    async upload() {
-      try {
-        let r1 = await axios.post("/api/items", {
-          title: this.title,
-          question: this.question,
-          response: this.response,
-          background: this.background,
-          name: this.name,
-        });
-        this.addItem = r1.data;
-      } catch (error) {
-        //console.log(error);
-      }
-    },
     async editItem(item) {
       try {
         await axios.put("/api/items/" + item._id, {
