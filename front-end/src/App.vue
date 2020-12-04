@@ -8,9 +8,11 @@
       </router-link>
       <div class="title">
         <h1>Q&A</h1>
-        <router-link to = "/" tag = button>Ask Questions</router-link>
-         <router-link to="/Answer" tag = button>Answer Questions</router-link>
-         <router-link to="/Display" tag = button>View Questions</router-link>
+        <router-link to = "/" tag = button class = "navbar">Ask Questions</router-link>
+         <router-link to="/Answer" tag = button
+         class = "navbar">Answer Questions</router-link>
+         <router-link to="/Display" tag = button
+         class = "navbar">View Questions</router-link>
       </div>
     </div>
     <div class="content">
@@ -25,6 +27,22 @@
 </template>
 
 <style>
+.navbar {
+  margin: 10px 30px;
+  height: 200px;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid 1px black;
+  border-radius: 5px;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 5px 5px 5px;
+}
 #app {
   background-color: #2387E3;
 }
