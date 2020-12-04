@@ -16,9 +16,9 @@
             :key="s.id"
             @click="selectItem(s)"
           >
-            <h2>{{ addItem.title }}</h2>
+            <input v-model="findTitle" placeholder = "title"/>
             <h4>Question:</h4>
-            <p>{{ addItem.question }}</p>
+            <input v-model="findQuestion" placeholder = "question"/>
             <p></p>
             <h4>Answer Question Here:</h4>
             <textarea
