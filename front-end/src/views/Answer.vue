@@ -47,6 +47,7 @@
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
+          <button @click="upload(findItem)">Add</button>
           <button @click="editItem(findItem)">Edit</button>
           <button @click="deleteItem(findItem)">Delete</button>
         </div>

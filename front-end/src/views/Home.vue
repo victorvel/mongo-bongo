@@ -3,7 +3,7 @@
     <h1>Insert Question Here:</h1>
     <div id="box">
       <div id="input">
-        <input class="form" v-model="name" placeholder="Name" />
+        <input class="form" v-model="name" placeholder="Your Name" />
         <input class="form" v-model="title" placeholder="Title of post" />
         <textarea
           class="form"
