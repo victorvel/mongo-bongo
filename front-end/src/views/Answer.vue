@@ -6,38 +6,6 @@
       </div>
     </div>
     <div class="content">
-      <!-- <div class="add">
-        <input v-model = "findTitle" placeholder = "Search">
-        <div class="suggestions" v-if="suggestions.length > 0">
-          <div
-            class="suggestion"
-            v-for="s in suggestions"
-            :key="s.id"
-            @click="selectItem(s)"
-          >
-            <input v-model="findTitle"/>
-            <h4>Question:</h4>
-            <input v-model="findQuestion"/>
-            <p></p>
-            <h4>Answer Question Here:</h4>
-            <textarea
-              v-model="response"
-              placeholder="Put Answer Here"
-              name="response"
-              id=""
-              cols="30"
-              rows="10"
-            ></textarea>
-            <p></p>
-            <input
-              v-model="background"
-              placeholder="Why are you qualified to answer this Question"
-            />
-            <p></p>
-            <button @click="upload">Post Answer</button>
-          </div>
-        </div>
-      </div> -->
       <div class="edit">
         <div class="form">
           <p>Edit Questions/Answers Below</p>
