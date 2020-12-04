@@ -29,8 +29,6 @@
 <style>
 .navbar {
   margin: 10px 30px;
-  height: 200px;
-  width: 450px;
   margin-left: auto;
   margin-right: auto;
   border: solid 1px black;
