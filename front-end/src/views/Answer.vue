@@ -16,9 +16,11 @@
             :key="s.id"
             @click="selectItem(s)"
           >
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.question }}</p>
+            <h2>{{ addItem.title }}</h2>
+            <h4>Question:</h4>
+            <p>{{ addItem.question }}</p>
             <p></p>
+            <h4>Answer Question Here</h4>
             <textarea
               v-model="response"
               placeholder="Put Answer Here"
