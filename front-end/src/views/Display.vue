@@ -5,6 +5,8 @@
             <h2>{{item.name}}</h2>
             <h2>{{item.title}}</h2>
             <p>{{item.question}}</p>
+            <p>{{item.response}}</p>
+            <p>{{item.background}}</p>
         </div>
     </div>
 </template>
