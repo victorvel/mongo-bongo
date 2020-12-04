@@ -8,7 +8,7 @@
       </router-link>
       <div class="title">
         <h1>Q&A</h1>
-         <router-link to="/Answer" tag = button>Answer Qs</button></router-link>
+         <router-link to="/Answer" tag = button>Answer Questions</router-link>
       </div>
     </div>
     <div class="content">
