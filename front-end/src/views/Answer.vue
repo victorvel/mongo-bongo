@@ -141,7 +141,7 @@ export default {
   name: "Answer",
   data() {
     return {
-      title: "", //Title of Question
+      title: " ", //Title of Question
       question: "", //Question Text
       response: "", //Answer Text
       background: "", //Answerer Experience Text
