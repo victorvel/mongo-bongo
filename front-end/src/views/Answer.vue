@@ -29,10 +29,12 @@
               cols="30"
               rows="10"
             ></textarea>
+            <p></p>
             <input
               v-model="background"
               placeholder="Why are you qualified to answer this Question"
             />
+            <p></p>
             <button @click="upload">Post Answer</button>
           </div>
         </div>
