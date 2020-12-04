@@ -29,6 +29,7 @@
       <a href="https://github.com/victorvel/mongo-bongo.git">
         Github Classrom Link</a
       >
+      <p>Created by: Zachary King and Victor Velasco</p>
     </div>
   </div>
 </template>
