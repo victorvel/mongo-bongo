@@ -147,6 +147,7 @@ export default {
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
       
+      addItem:null,
       //array of items
       items: [],
 
