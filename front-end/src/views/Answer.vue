@@ -65,10 +65,11 @@
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
+          <button @click="editItem(findItem)">Edit</button>
           <button @click="deleteItem(findItem)">Delete</button>
         </div>
       </div>
-      <button @click="editItem(findItem)">Edit</button>
+      
     </div>
   </div>
 </template>
@@ -145,7 +146,17 @@ export default {
       response: "", //Answer Text
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
+      
+      //array of items
       items: [],
+
+      //find definitions
+      findTitle = "",
+      findQuestion = "",
+      findResponse = "",
+      findBackground = "",
+      findName = "",
+      findItem = null,
     };
   },
   computed: {
