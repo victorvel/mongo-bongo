@@ -54,10 +54,10 @@
           </div>
         </div>
         <div class="upload" v-if="findItem">
+          <h4>Title</h4>
           <input v-model="findItem.title" />
           <p></p>
-          <p></p>
-          <input v-model="findItem.question" />
+          <h4>Question:</h4>
           <textarea
             v-model="findItem.question"
             name="question"
@@ -65,6 +65,8 @@
             cols="30"
             rows="10"
           ></textarea>
+          <p></p>
+          <h4>Answer Here:</h4>
           <textarea
             v-model="response"
             name="response"
@@ -72,6 +74,8 @@
             cols="30"
             rows="10"
           ></textarea>
+          <p></p>
+          <h5>Your Experience</h5>
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
