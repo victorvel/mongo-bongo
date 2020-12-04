@@ -8,13 +8,14 @@
       </router-link>
       <div class="title">
         <h1>Q&A</h1>
+         <router-link to="/answer" tag = button>Answer Qs</button></router-link>
       </div>
     </div>
     <div class="content">
       <router-view />
     </div>
     <div class="footer">
-      <router-link to="/answer">Answer Qs</router-link>
+     
       <br>
           <a href="https://github.com/victorvel/mongo-bongo.git">
             Github Classrom Link</a>
