@@ -1,10 +1,8 @@
 <template>
   <div id="answer">
     <div class="header">
-      <router-link to="/"> </router-link>
       <div class="title">
         <h1>Answer Questions Below</h1>
-        <router-link to="/" tag="button">Home</router-link>
       </div>
     </div>
     <div class="content">
@@ -16,9 +14,9 @@
             :key="s.id"
             @click="selectItem(s)"
           >
-            <input v-model="findTitle" placeholder = "title"/>
+            <input v-model="findTitle"/>
             <h4>Question:</h4>
-            <input v-model="findQuestion" placeholder = "question"/>
+            <input v-model="findQuestion"/>
             <p></p>
             <h4>Answer Question Here:</h4>
             <textarea
