@@ -17,9 +17,7 @@
         <button @click="upload" style="width: 70px">Submit</button>
       </div>
       <div class="upload" v-if="addItem">
-        <h2>{{ addItem.name }}</h2>
-        <h3>{{ addItem.title }}</h3>
-        <p>{{ addItem.question }}</p>
+        <h3>Your question has been recorded!</h3>
       </div>
     </div>
   </div>
