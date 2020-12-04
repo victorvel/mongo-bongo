@@ -65,10 +65,11 @@
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
+          <button @click="editItem(findItem)">Edit</button>
           <button @click="deleteItem(findItem)">Delete</button>
         </div>
       </div>
-      <button @click="editItem(findItem)">Edit</button>
+      
     </div>
   </div>
 </template>
