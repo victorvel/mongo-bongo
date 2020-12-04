@@ -36,7 +36,7 @@
           <p></p>
           <h4>Answer Here:</h4>
           <textarea
-            v-model="response"
+            v-model="findItem.response"
             name="response"
             id=""
             cols="30"
@@ -179,20 +179,6 @@ export default {
         return true;
       } catch (error) {
         // console.log(error);
-      }
-    },
-    async upload() {
-      try {
-        let r1 = await axios.post("/api/items", {
-          title: this.title,
-          question: this.question,
-          response: this.response,
-          background: this.background,
-          name: this.name,
-        });
-        this.addItem = r1.data;
-      } catch (error) {
-        //console.log(error);
       }
     },
     async editItem(item) {
