@@ -37,6 +37,8 @@ export default {
       addItem: null,
       items: [],
       findName: "",
+      response: "no answer yet",
+      background: "none"
     };
   },
   computed: {},
@@ -59,6 +61,8 @@ export default {
           name: this.name,
           title: this.title,
           question: this.question,
+          response: this.response,
+          background: this.background
         });
         this.addItem = r1.data;
       } catch (error) {

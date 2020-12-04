@@ -20,6 +20,8 @@ app.post('/api/items', async (req, res) => {
     name: req.body.name,
     title: req.body.title,
     question: req.body.question,
+    response: req.body.response,
+    background: req.body.background
   });
   try {
     await item.save();
@@ -82,8 +84,10 @@ app.put('/api/items/:id',async(req, res) => {
     });
 
     item.title = req.body.title;
-    item.description = req.body.description;
+    item.name = req.body.name;
     item.question = req.body.question;
+    item.response = req.body.response;
+    item.background = req.body.background;
 
     item.save();
     res.sendStatus(200);
