@@ -19,11 +19,7 @@ app.post('/api/items', async (req, res) => {
   const item = new Item({
     name: req.body.name,
     title: req.body.title,
-<<<<<<< HEAD
-    description: req.body.question,
-=======
     question: req.body.question,
->>>>>>> c14fe06abfa8a06b71f89a1d030d680cdbfc9d55
   });
   try {
     await item.save();
