@@ -82,8 +82,10 @@ app.put('/api/items/:id',async(req, res) => {
     });
 
     item.title = req.body.title;
-    item.description = req.body.description;
+    item.name = req.body.name;
     item.question = req.body.question;
+    item.background = req.body.question;
+    item.response = req.body.response;
 
     item.save();
     res.sendStatus(200);
