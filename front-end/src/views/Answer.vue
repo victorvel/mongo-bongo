@@ -47,8 +47,7 @@
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
-          <button @click="upload(findItem)">Add</button>
-          <button @click="editItem(findItem)">Edit</button>
+          <button @click="editItem(findItem)">Add/Edit</button>
           <button @click="deleteItem(findItem)">Delete</button>
         </div>
       </div>
@@ -179,20 +178,6 @@ export default {
         return true;
       } catch (error) {
         // console.log(error);
-      }
-    },
-    async upload() {
-      try {
-        let r1 = await axios.post("/api/items", {
-          title: this.title,
-          question: this.question,
-          response: this.response,
-          background: this.background,
-          name: this.name,
-        });
-        this.addItem = r1.data;
-      } catch (error) {
-        //console.log(error);
       }
     },
     async editItem(item) {
