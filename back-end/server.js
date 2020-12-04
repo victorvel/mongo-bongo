@@ -10,15 +10,20 @@ app.use(bodyParser.urlencoded({
 const mongoose = require('mongoose');
 
 // connect to the database
-mongoose.connect('mongodb://localhost:27017/museum', {
+mongoose.connect('mongodb://localhost:27017/local', {
   useNewUrlParser: true
 });
 
-// Create a new item in the museum: takes a title and a path to an image.
+
 app.post('/api/items', async (req, res) => {
   const item = new Item({
+    name: req.body.name,
     title: req.body.title,
+<<<<<<< HEAD
     description: req.body.question,
+=======
+    question: req.body.question,
+>>>>>>> c14fe06abfa8a06b71f89a1d030d680cdbfc9d55
   });
   try {
     await item.save();
@@ -39,25 +44,16 @@ const upload = multer({
 });
 
 const itemSchema = new mongoose.Schema({
+  name: String,
   title: String,
-  description: String,
-  path: String,
+  question: String,
+  response: String,
+  background: String
 });
 
 // Create a model for items in the museum.
 const Item = mongoose.model('Item', itemSchema);
 
-// Upload a photo. Uses the multer middleware for the upload and then returns
-// the path where the photo is stored in the file system.
-app.post('/api/photos', upload.single('photo'), async (req, res) => {
-  // Just a safety check
-  if (!req.file) {
-    return res.sendStatus(400);
-  }
-  res.send({
-    path: "/images/" + req.file.filename
-  });
-});
 
 // Get a list of all of the items in the museum.
 app.get('/api/items', async (req, res) => {

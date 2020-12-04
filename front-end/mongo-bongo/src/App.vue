@@ -23,6 +23,9 @@
 </template>
 
 <style>
+#app {
+  background-color: #2387E3;
+}
 html {
   box-sizing: border-box;
 }
@@ -30,7 +33,7 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  background: #fff;
+  background-color: #2387E3;
   padding: 0px;
   margin: 0px;
 }
