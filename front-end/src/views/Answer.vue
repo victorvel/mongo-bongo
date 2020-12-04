@@ -151,12 +151,12 @@ export default {
       items: [],
 
       //find definitions
-      findTitle = "",
-      findQuestion = "",
-      findResponse = "",
-      findBackground = "",
-      findName = "",
-      findItem = null,
+      findTitle: "",
+      findQuestion: "",
+      findResponse: "",
+      findBackground: "",
+      findName: "",
+      findItem: null,
     };
   },
   computed: {
