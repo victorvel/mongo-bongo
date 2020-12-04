@@ -6,7 +6,8 @@
       </div>
     </div>
     <div class="content">
-      <div class="add">
+      <!-- <div class="add">
+        <input v-model = "findTitle" placeholder = "Search">
         <div class="suggestions" v-if="suggestions.length > 0">
           <div
             class="suggestion"
@@ -36,10 +37,10 @@
             <button @click="upload">Post Answer</button>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="edit">
         <div class="form">
-          <p>Does a question or answer need to be edited? Do it below!</p>
+          <p>Edit Questions/Answers Below</p>
           <input v-model="findTitle" placeholder="Search" />
           <div class="suggestions" v-if="suggestions.length > 0">
             <div
