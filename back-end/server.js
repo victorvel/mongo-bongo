@@ -18,8 +18,7 @@ mongoose.connect('mongodb://localhost:27017/museum', {
 app.post('/api/items', async (req, res) => {
   const item = new Item({
     title: req.body.title,
-    description: req.body.description,
-    path: req.body.path,
+    description: req.body.question,
   });
   try {
     await item.save();
@@ -92,6 +91,7 @@ app.put('/api/items/:id',async(req, res) => {
 
     item.title = req.body.title;
     item.description = req.body.description;
+    item.question = req.body.question;
 
     item.save();
     res.sendStatus(200);

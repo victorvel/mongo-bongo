@@ -1,58 +1,79 @@
 <template>
   <div id="answer">
     <div class="header">
-      <router-link to="/">
-      </router-link>
+      <router-link to="/"> </router-link>
       <div class="title">
         <h1>Answer Questions Below</h1>
-         <router-link to="/" tag = button>Home</router-link>
+        <router-link to="/" tag="button">Home</router-link>
       </div>
     </div>
     <div class="content">
       <div class="add">
         <div class="form" v-for="item in items" :key="item.id">
-          <h2>{{addItem.title}}</h2>
-          <p>{{addItem.question}}</p>
+          <h2>{{ addItem.title }}</h2>
+          <p>{{ addItem.question }}</p>
           <p></p>
-          <textarea  v-model="response" placeholder="Put Answer Here" name="response" id="" cols="30" rows="10"></textarea>
-          <input v-model="background" placeholder = "Why are you qualified to answer this Question"/>
+          <textarea
+            v-model="response"
+            placeholder="Put Answer Here"
+            name="response"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input
+            v-model="background"
+            placeholder="Why are you qualified to answer this Question"
+          />
           <button @click="upload">Post Answer</button>
-      </div>
-    </div>
-     <div class="edit">
-      <div class="form">
-        <p>Does a question or answer need to be edited? Do it below!</p>
-        <input v-model="findTitle" placeholder="Search" />
-        <div class="suggestions" v-if="suggestions.length > 0">
-          <div
-            class="suggestion"
-            v-for="s in suggestions"
-            :key="s.id"
-            @click="selectItem(s)"
-          >
-            {{ s.title }}
-          </div>
         </div>
       </div>
-      <div class="upload" v-if="findItem">
-        <input v-model="findItem.title" />
-        <p></p>
-        <p></p>
-        <input v-model="findItem.question" />
-        <textarea  v-model="findItem.question"  name="question" id="" cols="30" rows="10"></textarea>
-          <textarea  v-model="response" name = "response" id="" cols="30" rows="10"></textarea>
-        <input v-model="findItem.background" />
+      <div class="edit">
+        <div class="form">
+          <p>Does a question or answer need to be edited? Do it below!</p>
+          <input v-model="findTitle" placeholder="Search" />
+          <div class="suggestions" v-if="suggestions.length > 0">
+            <div
+              class="suggestion"
+              v-for="s in suggestions"
+              :key="s.id"
+              @click="selectItem(s)"
+            >
+              {{ s.title }}
+            </div>
+          </div>
+        </div>
+        <div class="upload" v-if="findItem">
+          <input v-model="findItem.title" />
+          <p></p>
+          <p></p>
+          <input v-model="findItem.question" />
+          <textarea
+            v-model="findItem.question"
+            name="question"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <textarea
+            v-model="response"
+            name="response"
+            id=""
+            cols="30"
+            rows="10"
+          ></textarea>
+          <input v-model="findItem.background" />
+        </div>
+        <div class="actions" v-if="findItem">
+          <button @click="deleteItem(findItem)">Delete</button>
+        </div>
       </div>
-      <div class="actions" v-if="findItem">
-        <button @click="deleteItem(findItem)">Delete</button>
-      </div>
+      <button @click="editItem(findItem)">Edit</button>
     </div>
-    <button @click="editItem(findItem)">Edit</button>
   </div>
 </template>
 
 <style>
-
 html {
   box-sizing: border-box;
 }
@@ -113,7 +134,6 @@ h2 {
 }
 </style>
 
-
 <script>
 import axios from "axios";
 export default {
@@ -125,7 +145,7 @@ export default {
       response: "", //Answer Text
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
-      items: [], 
+      items: [],
     };
   },
   computed: {
@@ -156,7 +176,7 @@ export default {
       } catch (error) {
         //console.log(error);//
       }
-    },  
+    },
     async deleteItem(item) {
       try {
         await axios.delete("/api/items/" + item._id);
