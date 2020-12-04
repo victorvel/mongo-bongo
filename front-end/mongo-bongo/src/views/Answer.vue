@@ -10,16 +10,44 @@
     </div>
     <div class="content">
       <div class="add">
-      <div class="form">
-        <div v-bind="title" name = "title"/>
-        <p></p>
-        <div v-bind="question" name="question" />
-        <p></p>
-        <input v-model="response" placeholder="Put Answer Here" />
-        <input v-model="background" placeholder = "Why are you qualified to answer this Question"/>
-        <button @click="upload">Post Answer</button>
+        <div class="form" v-for="item in items" :key="item.id">
+          <div v-bind="title" name = "title"/>
+          <p></p>
+          <div v-bind="question" name="question" />
+          <p></p>
+          <input v-model="response" placeholder="Put Answer Here" />
+          <input v-model="background" placeholder = "Why are you qualified to answer this Question"/>
+          <button @click="upload">Post Answer</button>
       </div>
     </div>
+     <div class="edit">
+      <div class="form">
+        <p>Does a question or answer need to be edited? Do it below!</p>
+        <input v-model="findTitle" placeholder="Search" />
+        <div class="suggestions" v-if="suggestions.length > 0">
+          <div
+            class="suggestion"
+            v-for="s in suggestions"
+            :key="s.id"
+            @click="selectItem(s)"
+          >
+            {{ s.title }}
+          </div>
+        </div>
+      </div>
+      <div class="upload" v-if="findItem">
+        <input v-model="findItem.title" />
+        <p></p>
+        <p></p>
+        <input v-model="findItem.question" />
+        <input v-model="findItem.response" />
+        <input v-model="findItem.background" />
+      </div>
+      <div class="actions" v-if="findItem">
+        <button @click="deleteItem(findItem)">Delete</button>
+      </div>
+    </div>
+    <button @click="editItem(findItem)">Edit</button>
   </div>
 </template>
 
@@ -97,10 +125,16 @@ export default {
       response: "", //Answer Text
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
-    
+      items: [], 
     };
   },
   computed: {
+    suggestions() {
+      let items = this.items.filter((item) =>
+        item.title.toLowerCase().startsWith(this.findTitle.toLowerCase())
+      );
+      return items.sort((a, b) => a.title > b.title);
+    },
   },
   created() {
     this.getItems();
@@ -122,24 +156,7 @@ export default {
       } catch (error) {
         //console.log(error);//
       }
-    },
-    async editItem(item) {
-      try {
-        await axios.put("/api/items/" + item._id, {
-          title: this.findItem.title,
-          question: this.findItem.question,
-          response: this.findItem.response,
-          background: this.findItem.background,
-          name: this.findItem.name,
-        });
-        this.findItem = null;
-        this.getItems();
-        return true;
-      } catch (error) {
-        //console.log(error);//
-      }
-    },
-    
+    },  
     async deleteItem(item) {
       try {
         await axios.delete("/api/items/" + item._id);
@@ -157,11 +174,27 @@ export default {
           question: this.question,
           response: this.response,
           background: this.background,
-          name: this.findItem.name,
+          name: this.name,
         });
         this.addItem = r1.data;
       } catch (error) {
         //console.log(error);
+      }
+    },
+    async editItem(item) {
+      try {
+        await axios.put("/api/items/" + item._id, {
+          title: this.findItem.title,
+          question: this.findItem.question,
+          response: this.findItem.response,
+          background: this.findItem.background,
+          name: this.findItem.name,
+        });
+        this.findItem = null;
+        this.getItems();
+        return true;
+      } catch (error) {
+        //console.log(error);//
       }
     },
   },
