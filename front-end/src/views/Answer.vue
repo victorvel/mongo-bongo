@@ -10,7 +10,7 @@
     <div class="content">
       <div class="add">
         <div class="form" v-for="item in items" :key="item.id">
-          <h2>{{ addItem.title }}</h2>
+          <h2>this is a question</h2>
           <p>{{ addItem.question }}</p>
           <p></p>
           <textarea
@@ -141,7 +141,7 @@ export default {
   name: "Answer",
   data() {
     return {
-      title: " ", //Title of Question
+      title: "", //Title of Question
       question: "", //Question Text
       response: "", //Answer Text
       background: "", //Answerer Experience Text
