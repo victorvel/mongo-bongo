@@ -11,11 +11,10 @@
     <div class="content">
       <div class="add">
         <div class="form" v-for="item in items" :key="item.id">
-          <div v-bind="title" name = "title"/>
+          <h2>{{addItem.title}}</h2>
+          <p>{{addItem.question}}</p>
           <p></p>
-          <div v-bind="question" name="question" />
-          <p></p>
-          <input v-model="response" placeholder="Put Answer Here" />
+          <textarea  v-model="response" placeholder="Put Answer Here" name="response" id="" cols="30" rows="10"></textarea>
           <input v-model="background" placeholder = "Why are you qualified to answer this Question"/>
           <button @click="upload">Post Answer</button>
       </div>
@@ -40,7 +39,8 @@
         <p></p>
         <p></p>
         <input v-model="findItem.question" />
-        <input v-model="findItem.response" />
+        <textarea  v-model="findItem.question"  name="question" id="" cols="30" rows="10"></textarea>
+          <textarea  v-model="response" name = "response" id="" cols="30" rows="10"></textarea>
         <input v-model="findItem.background" />
       </div>
       <div class="actions" v-if="findItem">
