@@ -3,7 +3,7 @@
     <div class="header">
       <router-link to="/">
         <div class="logo">
-          <img src="/ordinary.png" />
+          <img src="/question.jpg" />
         </div>
       </router-link>
       <div class="title">
