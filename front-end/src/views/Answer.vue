@@ -146,7 +146,11 @@ export default {
       response: "", //Answer Text
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
+      
+      //array of items
       items: [],
+
+      //find definitions
       findTitle = "",
       findQuestion = "",
       findResponse = "",
