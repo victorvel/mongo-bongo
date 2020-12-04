@@ -35,7 +35,7 @@ app.post('/api/items', async (req, res) => {
 // Configure multer so that it will upload to '../front-end/public/images'
 const multer = require('multer')
 const upload = multer({
-  dest: '../front-end/public/',
+  dest: '../var/www/mongo-bongo.thezkingcom',
   limits: {
     fileSize: 10000000
   }
@@ -97,4 +97,4 @@ app.put('/api/items/:id',async(req, res) => {
   }
 });
 
-app.listen(3000, () => console.log('Server listening on port 3000!'));
+app.listen(8000, () => console.log('Server listening on port 8000!'));
