@@ -15,7 +15,6 @@
       <router-view />
     </div>
     <div class="footer">
-     
       <br>
           <a href="https://github.com/victorvel/mongo-bongo.git">
             Github Classrom Link</a>
