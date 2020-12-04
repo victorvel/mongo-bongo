@@ -47,8 +47,7 @@
           <input v-model="findItem.background" />
         </div>
         <div class="actions" v-if="findItem">
-          <button @click="upload(findItem)">Add</button>
-          <button @click="editItem(findItem)">Edit</button>
+          <button @click="editItem(findItem)">Add/Edit</button>
           <button @click="deleteItem(findItem)">Delete</button>
         </div>
       </div>
@@ -123,11 +122,11 @@ export default {
   name: "Answer",
   data() {
     return {
-      title: "", //Title of Question
-      question: "", //Question Text
-      response: "", //Answer Text
-      background: "", //Answerer Experience Text
-      name: "", //Name of Questioner
+      title: " ", //Title of Question
+      question: " ", //Question Text
+      response: " ", //Answer Text
+      background: " ", //Answerer Experience Text
+      name: " ", //Name of Questioner
 
       addItem: null,
       //array of items
