@@ -16,9 +16,11 @@
             :key="s.id"
             @click="selectItem(s)"
           >
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.question }}</p>
+            <h2>{{ addItem.title }}</h2>
+            <h4>Question:</h4>
+            <p>{{ addItem.question }}</p>
             <p></p>
+            <h4>Answer Question Here:</h4>
             <textarea
               v-model="response"
               placeholder="Put Answer Here"
@@ -27,10 +29,12 @@
               cols="30"
               rows="10"
             ></textarea>
+            <p></p>
             <input
               v-model="background"
               placeholder="Why are you qualified to answer this Question"
             />
+            <p></p>
             <button @click="upload">Post Answer</button>
           </div>
         </div>
