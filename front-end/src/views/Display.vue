@@ -5,7 +5,9 @@
             <h2>{{item.title}}</h2>
             <p style="font-size: 18px;">"{{item.question}}"</p>
             <p>-{{item.name}}</p>
-            <p>{{item.response}}</p>
+            <h2>Answer:</h2>
+            <p style="font-size: 18px;">{{item.response}}</p>
+            <p>Qualification: {{item.background}}</p>
         </div>
     </div>
 </template>

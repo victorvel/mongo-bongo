@@ -36,7 +36,7 @@
           <p></p>
           <h4>Answer Here:</h4>
           <textarea
-            v-model="response"
+            v-model="findItem.response"
             name="response"
             id=""
             cols="30"
