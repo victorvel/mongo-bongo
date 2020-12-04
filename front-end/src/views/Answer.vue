@@ -147,6 +147,12 @@ export default {
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
       items: [],
+      findTitle = "",
+      findQuestion = "",
+      findResponse = "",
+      findBackground = "",
+      findName = "",
+      findItem = null,
     };
   },
   computed: {
