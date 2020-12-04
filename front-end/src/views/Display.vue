@@ -2,9 +2,9 @@
     <div id="display">
         <h1>Questions:</h1>
         <div id="qs" v-for="item in items" :key="item.id">
-            <h2>{{item.name}}</h2>
-            <h3>{{item.title}}</h3>
+            <h2>{{item.title}}</h2>
             <p>{{item.question}}</p>
+            <p>-{{item.name}}</p>
         </div>
     </div>
 </template>
@@ -37,5 +37,7 @@ export default {
 </script>
 
 <style scoped>
-
+#qs {
+    border: solid 1px black;
+}
 </style>

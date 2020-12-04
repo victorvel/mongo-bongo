@@ -63,6 +63,8 @@ body {
 / Footer */
 #app {
   min-height: 90vh;
+  position: relative;
+  padding-bottom: 50px;
 }
 .footer {
   height: 50px;
