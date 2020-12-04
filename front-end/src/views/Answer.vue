@@ -10,8 +10,8 @@
     <div class="content">
       <div class="add">
         <div class="form" v-for="item in items" :key="item.id">
-          <h2>this is a question</h2>
-          <p>{{ addItem.question }}</p>
+          <h2>{{item.title}}</h2>
+          <p>{{ item.question }}</p>
           <p></p>
           <textarea
             v-model="response"
@@ -147,7 +147,7 @@ export default {
       background: "", //Answerer Experience Text
       name: "", //Name of Questioner
       
-      addItem:null,
+      addItem: null,
       //array of items
       items: [],
 
